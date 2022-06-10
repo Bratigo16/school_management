@@ -7,11 +7,13 @@
 
 package za.ac.cput.school_management.domain;
 
+import org.apache.tomcat.jni.Address;
+
 import java.util.Objects;
 
 public class StudentAddress {
-    private final String studentId,address;
-
+       private final String studentId;
+       private Address address;
 
     private StudentAddress(Builder builder) {
         this.studentId = builder.studentId;
@@ -23,13 +25,14 @@ public class StudentAddress {
         return studentId;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
     public static class Builder {
 
-        private String studentId, address;
+        private String studentId;
+        private Address address;
 
 
         public Builder studentId(String studentID) {
@@ -37,7 +40,7 @@ public class StudentAddress {
             return this;
         }
 
-        public Builder address(String address) {
+        public Builder address(Address address) {
             this.address = address;
             return this;
         }
