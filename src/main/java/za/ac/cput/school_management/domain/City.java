@@ -14,7 +14,7 @@ import java.util.Objects;
 public class City {
     private String id;
     private  String name;
-    private String  country;
+    private Country  country;
 
    public City (Builder builder){
        this.id = builder.id;
@@ -39,10 +39,10 @@ public class City {
     }
 
     public String getCountry() {
-        return country;
+        return country.toString();
     }
 
-    public void setCountry(String country) {
+    public void setCountry(Country country) {
         this.country = country;
     }
 
@@ -72,7 +72,7 @@ public class City {
     public class Builder {
         private String id;
         private String name;
-        private String country;
+        private Country country;
 
         public Builder setId(String id) {
             this.id = id;
@@ -84,7 +84,7 @@ public class City {
             return this;
         }
 
-        public Builder setCountry(String country) {
+        public Builder setCountry(Country country) {
             this.country = country;
             return this;
         }
