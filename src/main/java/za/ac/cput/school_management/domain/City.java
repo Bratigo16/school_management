@@ -2,6 +2,8 @@ package za.ac.cput.school_management.domain;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
 /*
  *Author :Alizwa Solibanzi
  * Student no: 220001499
@@ -52,6 +54,21 @@ public class City {
                 ", country='" + country + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        City city = (City) o;
+        return city.equals(city.id);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+
+
     public class Builder {
         private String id;
         private String name;
@@ -81,6 +98,7 @@ public class City {
         public City build(){
             return  new City(this);
         }
+
 
     }
 }
