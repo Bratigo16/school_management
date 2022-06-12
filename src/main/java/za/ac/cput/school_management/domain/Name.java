@@ -48,7 +48,7 @@ public class Name {
                 ", lastName='" + lastName + '\'' +
                 '}';
     }
-    public class Builder{
+    public static class Builder{
         private String firstName;
         private String middleName;
         private String lastName;
