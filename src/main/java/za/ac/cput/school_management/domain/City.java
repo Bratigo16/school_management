@@ -38,8 +38,8 @@ public class City {
         this.name = name;
     }
 
-    public String getCountry() {
-        return country.toString();
+    public Country getCountry() {
+        return country;
     }
 
     public void setCountry(Country country) {
@@ -69,7 +69,7 @@ public class City {
 
 
 
-    public class Builder {
+    public static class Builder {
         private String id;
         private String name;
         private Country country;
