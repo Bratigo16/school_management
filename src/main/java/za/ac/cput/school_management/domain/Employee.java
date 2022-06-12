@@ -19,7 +19,6 @@ public class Employee {
         this.staffId = builder.staffId;
         this.email = builder.email;
         this.name = builder.name;
-
     }
 
     public String getStaffId(){return staffId;}
@@ -65,7 +64,7 @@ public class Employee {
 
         @Override
         public int hashCode() {
-            return Objects.hash(staffId, email);
+            return Objects.hash(staffId);
         }
 
     @Override
