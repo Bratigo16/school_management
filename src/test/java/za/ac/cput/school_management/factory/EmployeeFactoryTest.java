@@ -9,20 +9,21 @@ package za.ac.cput.school_management.factory;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.school_management.domain.Employee;
 import za.ac.cput.school_management.domain.Name;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-public class EmployeeFactoryTest {
+class EmployeeFactoryTest {
     @Test
     public void buildWithSuccess() {
-        Employee employee = EmployeeFactory.build("011", "employee@inet.co.za", new Name);
+        Employee employee = EmployeeFactory.build("011", "employee@inet.co.za", "Jackie Gwen");
         System.out.println(employee);
         assertNotNull(employee);
     }
     @Test
     public void  buildWithError() {
         Exception exception = assertThrows(IllegalArgumentException.class,() ->
-                EmployeeFactory.build(null, "Daniel Smith", new Name));
-        assertTrue(exception.getMessage().contains("Staff Id is needed"));
+                EmployeeFactory.build(null, "DannySmith@Inet.co.za", "Daniel Smith"));
+        String exceptionMessage = exception.getMessage();
+        System.out.println(exceptionMessage);
+        assertSame( "staff Id is needed",exceptionMessage);
     }
 }
