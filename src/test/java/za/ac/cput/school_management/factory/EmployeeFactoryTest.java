@@ -20,10 +20,9 @@ class EmployeeFactoryTest {
     }
     @Test
     public void  buildWithError() {
-        Exception exception = assertThrows(IllegalArgumentException.class,() ->
-                EmployeeFactory.build(null, "DannySmith@Inet.co.za", "Daniel Smith"));
-        String exceptionMessage = exception.getMessage();
-        System.out.println(exceptionMessage);
-        assertSame( "staff Id is needed",exceptionMessage);
+     Exception exception = assertThrows(IllegalArgumentException.class,() ->
+               EmployeeFactory.build(null, "Daniel Smith", new Name));
+        assertTrue(exception.getMessage().contains("Staff Id is needed"));
+
     }
 }
