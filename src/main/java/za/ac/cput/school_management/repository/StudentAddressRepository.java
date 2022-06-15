@@ -18,7 +18,7 @@ public class StudentAddressRepository {
     private StudentAddressRepository () {
         this.studentAddressList = new ArrayList<>();
     }
-    public static StudentAddressRepository GetStudentAddressRepository (){
+    public static StudentAddressRepository getRepository (){
         if(STUDENT_ADDRESS_REPOSITORY == null)
             STUDENT_ADDRESS_REPOSITORY= new StudentAddressRepository ();
         return STUDENT_ADDRESS_REPOSITORY;
