@@ -1,5 +1,7 @@
 package za.ac.cput.school_management.domain;
 
+import java.util.Objects;
+
 public class Address {
     private String unitNumber;
     private String complexName;
@@ -53,7 +55,7 @@ public class Address {
         return postalCode;
     }
 
-    public void setPostalCode(int postalCode) {
+    public void setPostalCode(Integer postalCode) {
         this.postalCode = postalCode;
     }
 
@@ -65,52 +67,41 @@ public class Address {
         this.city = city;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "Address{" +
-                "unitNumber='" + unitNumber + '\'' +
-                ", complexName='" + complexName + '\'' +
-                ", streetNumber='" + streetNumber + '\'' +
-                ", streetName='" + streetName + '\'' +
-                ", postalCode=" + postalCode +
-                ", city=" + city +
-                '}';
-    }
 
-    public class Builder{
-        private String unitNumber;
-        private String complexName;
-        private String streetNumber;
-        private String streetName;
-        private int postalCode;
-        private City city;
+    public static class Builder{
+        public String unitNumber;
+        public String complexName;
+        public String streetNumber;
+        public String streetName;
+        public Integer postalCode;
+        public City city;
 
-        public Builder setUnitNumber(String unitNumber) {
+        public Address.Builder UnitNumber(String unitNumber) {
             this.unitNumber = unitNumber;
             return this;
         }
 
-        public Builder setComplexName(String complexName) {
+        public Address.Builder complexName(String complexName) {
             this.complexName = complexName;
             return this;
         }
 
-        public Builder setStreetNumber(String streetNumber) {
+        public Address.Builder StreetNumber(String streetNumber) {
             this.streetNumber = streetNumber;
             return this;
         }
 
-        public Builder setStreetName(String streetName) {
+        public Address.Builder StreetName(String streetName) {
             this.streetName = streetName;
             return this;
         }
 
-        public Builder setPostalCode(int postalCode) {
+        public Address.Builder PostalCode(int postalCode) {
             this.postalCode = postalCode;
             return this;
         }
 
-        public Builder setCity(City city) {
+        public Address.Builder City(City city) {
             this.city = city;
             return this;
         }
@@ -126,5 +117,30 @@ public class Address {
         public Address build(){
             return new Address(this);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Address)) return false;
+        Address address = (Address) o;
+        return postalCode == address.postalCode && Objects.equals(unitNumber, address.unitNumber) && Objects.equals(complexName, address.complexName) && Objects.equals(streetNumber, address.streetNumber) && Objects.equals(streetName, address.streetName) && Objects.equals(city, address.city);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(unitNumber, complexName, streetNumber, streetName, postalCode, city);
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "unitNumber='" + unitNumber + '\'' +
+                ", complexName='" + complexName + '\'' +
+                ", streetNumber='" + streetNumber + '\'' +
+                ", streetName='" + streetName + '\'' +
+                ", postalCode=" + postalCode +
+                ", city=" + city +
+                '}';
     }
 }

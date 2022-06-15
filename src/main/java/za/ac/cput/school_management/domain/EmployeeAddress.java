@@ -29,12 +29,12 @@ public class EmployeeAddress {
 
 
 
-        public Builder setstaffId(String staffId) {
+        public Builder staffId(String staffId) {
             this.staffId = staffId;
             return this;
         }
 
-        public Builder setAddress(Address address) {
+        public Builder Address(Address address) {
             this.address = address;
             return this;
         }
