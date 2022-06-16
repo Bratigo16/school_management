@@ -51,6 +51,11 @@ public class CountryRepository implements ICountry
     }
 
     @Override
+    public Country reading(Country country) {
+        return null;
+    }
+
+    @Override
     public void delete(Country country)
     {
         this.countryList.remove(country);
