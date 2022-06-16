@@ -20,8 +20,10 @@ class EmployeeFactoryTest {
     }
     @Test
     public void  buildWithError() {
+        Name name =  new Name.Builder().setFirstName("test-name").
+                setMiddleName("test-MiddleName").setLastName("test-LastName").build();
      Exception exception = assertThrows(IllegalArgumentException.class,() ->
-               EmployeeFactory.build(null, "Daniel Smith", new Name));
+               EmployeeFactory.build(null, "Daniel Smith", "Kal"));
         assertTrue(exception.getMessage().contains("Staff Id is needed"));
 
     }

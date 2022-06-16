@@ -36,6 +36,10 @@ public class StudentAddressServiceImpl implements  StudentAddressService {
         return this.repository.read(studentId);
     }
 
+    @Override
+    public StudentAddress reading(StudentAddress studentAddress) {
+        return null;
+    }
 
 
     @Override
