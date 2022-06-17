@@ -9,13 +9,12 @@ package za.ac.cput.school_management.service;
 import za.ac.cput.school_management.domain.Employee;
 import za.ac.cput.school_management.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-    private static EmployeeService employeeService= null;
+    private static EmployeeService employeeService;
     private EmployeeRepository employeeRepository;
     private EmployeeServiceImpl() {
         this.employeeRepository = EmployeeRepository.GetEmployeeRepository();
@@ -34,6 +33,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Optional<Employee> read(String staffId) {
         return this.employeeRepository.read(staffId);
+    }
+
+    @Override
+    public Employee reading(Employee employee) {
+        return null;
     }
 
     @Override
