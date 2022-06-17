@@ -56,7 +56,7 @@ public class StudentServiceImp implements IStudentService {
 
     }
 
-    // List of all Student
+
     @Override
     public List<Student> findAll() {
         return this.repository.findAll();
