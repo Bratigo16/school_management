@@ -8,17 +8,19 @@ public class EmployeeAddress {
     private final String staffId;
     private Address address;
 
-    private EmployeeAddress(EmployeeAddress.Builder builder) {
+    private EmployeeAddress(Builder builder) {
         this.staffId = builder.staffId;
         this.address = builder.address;
 
     }
 
     public String getstaffId() {
+
         return staffId;
     }
 
     public Address getAddress() {
+
         return address;
     }
 
@@ -39,7 +41,7 @@ public class EmployeeAddress {
             return this;
         }
 
-        public EmployeeAddress.Builder copy(EmployeeAddress employeeAddress) {
+        public Builder copy(EmployeeAddress employeeAddress) {
             this.staffId = staffId;
             this.address = address;
 
@@ -50,19 +52,20 @@ public class EmployeeAddress {
             return new EmployeeAddress(this);
         }
 
-        public boolean equals(Object object) {
-            if (this == object) return true;
-            if (object == null || getClass() != object.getClass()) return false;
-            if (!super.equals(object)) return false;
-            Builder builder = (Builder) object;
-            return java.util.Objects.equals(staffId, builder.staffId) && java.util.Objects.equals(address, builder.address);
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Builder)) return false;
+            Builder builder = (Builder) o;
+            return staffId.equals(builder.staffId) && address.equals(builder.address);
         }
 
+        @Override
         public int hashCode() {
-            return java.util.Objects.hash(super.hashCode(), staffId, address);
+            return Objects.hash(staffId, address);
         }
 
-        @java.lang.Override
+        @Override
         public java.lang.String toString() {
             return "Builder{" +
                     "staffId='" + staffId + '\'' +
