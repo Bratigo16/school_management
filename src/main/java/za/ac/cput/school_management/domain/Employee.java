@@ -13,23 +13,22 @@ import java.util.Objects;
 public class Employee {
     private String staffId;
     private String email;
-    private Name name;
+    private String name;
 
     private Employee(Employee.Builder builder){
         this.staffId = builder.staffId;
         this.email = builder.email;
         this.name = builder.name;
-
     }
 
     public String getStaffId(){return staffId;}
     public String getEmail(){return email;}
-    public Name getName(){return name;}
+    public String getName(){return name;}
 
     public static class Builder{
         public String staffId;
         public String email;
-        public Name name;
+        public String name;
 
         public Employee.Builder staffId(String staffId) {
             this.staffId = staffId;
@@ -39,7 +38,7 @@ public class Employee {
             this.email = email;
             return this;
         }
-        public Employee.Builder name(Name name) {
+        public Employee.Builder name(String name) {
             this.name = name;
             return this;
         }
@@ -65,7 +64,7 @@ public class Employee {
 
         @Override
         public int hashCode() {
-            return Objects.hash(staffId, email);
+            return Objects.hash(staffId);
         }
 
     @Override
