@@ -7,7 +7,7 @@ import za.ac.cput.school_management.domain.Student;
  *  Author: Brady Sheldon 219053715
  *  Student
  *  June Assignment
- *  Date: 09 June 2022
+ *
  * */
 public class StudentFactory {
 
