@@ -11,9 +11,9 @@ import org.apache.tomcat.jni.Address;
 import java.util.Objects;
 
 public class Employee {
-    private String staffId;
+    private final String staffId;
     private String email;
-    private String name;
+    private Name name;
 
     private Employee(Employee.Builder builder){
         this.staffId = builder.staffId;
@@ -23,12 +23,12 @@ public class Employee {
 
     public String getStaffId(){return staffId;}
     public String getEmail(){return email;}
-    public String getName(){return name;}
+    public Name getName(){return name;}
 
     public static class Builder{
         public String staffId;
         public String email;
-        public String name;
+        public Name name;
 
         public Employee.Builder staffId(String staffId) {
             this.staffId = staffId;
@@ -38,7 +38,7 @@ public class Employee {
             this.email = email;
             return this;
         }
-        public Employee.Builder name(String name) {
+        public Employee.Builder name(Name name) {
             this.name = name;
             return this;
         }
