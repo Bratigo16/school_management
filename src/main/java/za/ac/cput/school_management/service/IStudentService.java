@@ -1,7 +1,7 @@
 package za.ac.cput.school_management.service;
 
 /*
- *  Author: Brady Sheldon 219053715
+ *  Author:BS Brady Sheldon 219053715
  *  Student
  *  June Assignment
  *
