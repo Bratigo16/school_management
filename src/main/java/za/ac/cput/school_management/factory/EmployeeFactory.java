@@ -11,7 +11,7 @@ import za.ac.cput.school_management.domain.Name;
 import za.ac.cput.school_management.helper.StringHelper;
 
 public class EmployeeFactory {
-    public static Employee build(String staffId, String email, String name) {
+    public static Employee build(String staffId, String email, Name name) {
         StringHelper.checkStringParam("staffId", staffId);
         StringHelper.checkStringParam("email", email);
 
