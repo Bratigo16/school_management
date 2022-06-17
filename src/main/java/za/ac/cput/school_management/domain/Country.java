@@ -5,13 +5,21 @@
 */
 package za.ac.cput.school_management.domain;
 
+
+import org.jetbrains.annotations.NotNull;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Country
+@Entity
+public class Country implements Serializable
 {
-    private String id;
-    private String name;
+    @NotNull @Id private String id;
+    @NotNull private String name;
 
+    protected Country(){}
 
     public Country(Builder builder)
     {
