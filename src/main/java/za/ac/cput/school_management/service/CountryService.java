@@ -1,7 +1,7 @@
-/*  CountryRepository.java
+/*  CountryService.java
     Class with business logic for Country entity
     Author: Wilbur Deano Smith (220003033)
-    Date: 16 June 2022
+    Date: 17 June 2022
 */
 package za.ac.cput.school_management.service;
 
@@ -44,6 +44,6 @@ public class CountryService implements ICountry
 
     @Override
     public List<Country> findAll() {
-        return null;
+        return this.countryRepository.findAll();
     }
 }
