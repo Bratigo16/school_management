@@ -3,28 +3,23 @@
  *Applications Development ADP3
  *Assignment School management
  *Service :Student Address service Impl
- */package za.ac.cput.school_management.service;
+ */
+package za.ac.cput.school_management.service;
 
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.StudentAddress;
 import za.ac.cput.school_management.repository.StudentAddressRepository;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class StudentAddressServiceImpl implements  StudentAddressService {
     private final StudentAddressRepository repository;
-    private static StudentAddressService SERVICE;
 
-    private StudentAddressServiceImpl () {
-        this.repository = StudentAddressRepository.getRepository();
-    }
 
-    public static StudentAddressService getService() {
-        if (SERVICE == null)
-            SERVICE = (StudentAddressService) new StudentAddressServiceImpl();
-        return SERVICE;
-
+    public StudentAddressServiceImpl (StudentAddressRepository repository) {
+        this.repository = repository;
     }
     @Override
     public StudentAddress save(StudentAddress studentAddress) {
@@ -45,8 +40,8 @@ public class StudentAddressServiceImpl implements  StudentAddressService {
     }
 
     @Override
-    public List<StudentAddressService> findAllStudentId(String studentId) {
-        return null;
+    public List<StudentAddress> findAllStudentId(String studentId) {
+        return this.repository.findAll();
     }
 }
 
