@@ -20,7 +20,7 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
+@SpringBootTest(classes = StudentAddressServiceImpl.class)
 public class StudentAddressServiceImplTest {
 
 

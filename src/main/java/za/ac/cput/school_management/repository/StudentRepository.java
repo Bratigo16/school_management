@@ -1,31 +1,33 @@
 package za.ac.cput.school_management.repository;
 
-import za.ac.cput.school_management.domain.Student;
-
-
-import java.util.*;
-
 /*
  *  Author: Brady Sheldon 219053715
  *  Student
  *  June Assignment
- *  Date: 09 June 2022
+ *
  * */
+
+
+import za.ac.cput.school_management.domain.Student;
+import java.util.*;
+
+
 public class StudentRepository {
 
-    private static StudentRepository repository;
 
-    private final List<Student> StudentDB;
+    private final List<Student> studentList;
+    private static StudentRepository STUDENT_REPOSITORY;
+
 
     private StudentRepository() {
-        this.StudentDB = new ArrayList<>();
+        this.studentList = new ArrayList<>();
     }
 
     public static StudentRepository getRepository() {
-        if (repository == null) {
-            repository = new StudentRepository();
+        if (STUDENT_REPOSITORY == null) {
+            STUDENT_REPOSITORY = new StudentRepository();
         }
-        return repository;
+        return STUDENT_REPOSITORY;
     }
 
     public Student save(Student student) {
@@ -33,20 +35,22 @@ public class StudentRepository {
         if (read.isPresent()){
             delete(read.get());
         }
-        this.StudentDB.add(student);
+        this.studentList.add(student);
         return student;
     }
 
     public Optional<Student> read(String StudentID) {
-        return this.StudentDB.stream().filter(g -> g.getStudentID().equalsIgnoreCase(StudentID))
+        return this.studentList.stream().filter(g -> g.getStudentID().equalsIgnoreCase(StudentID))
 
                 .findFirst();
     }
     public void delete(Student student) {
-        this.StudentDB.remove(student);
+        this.studentList.remove(student);
 
     }
     public List<Student> findAll() {
-        return this.StudentDB;
+        return this.studentList;
     }
+
+
 }

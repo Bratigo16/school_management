@@ -10,7 +10,8 @@ package za.ac.cput.school_management.domain;
 import org.apache.tomcat.jni.Address;
 import org.jetbrains.annotations.NotNull;
 
-import javax.persistence.Embeddable;
+
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
@@ -20,7 +21,10 @@ import java.util.Objects;
 public class StudentAddress implements Serializable {
        @NotNull@Id private String studentId;
 
-private Address address;
+
+    @Embedded private Address address;
+
+
       private StudentAddress(){}
 
     private StudentAddress(Builder builder) {

@@ -1,30 +1,25 @@
-/*  CountryRepository.java
+/*  CountryService.java
     Class with business logic for Country entity
     Author: Wilbur Deano Smith (220003033)
-    Date: 16 June 2022
+    Date: 17 June 2022
 */
 package za.ac.cput.school_management.service;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.Country;
 import za.ac.cput.school_management.repository.CountryRepository;
 
+import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CountryService implements ICountry
 {
     private final CountryRepository countryRepository;
-    private static CountryService COUNTRY_SERVICE;
 
-    private CountryService()
+    private CountryService(CountryRepository countryRepository)
     {
-        this.countryRepository = CountryRepository.getCountryRepository();
-    }
-
-    public static CountryService getCountryRepository()
-    {
-        if(COUNTRY_SERVICE == null)
-            COUNTRY_SERVICE = new CountryService ();
-        return COUNTRY_SERVICE;
+        this.countryRepository = countryRepository;
     }
 
     @Override
@@ -34,16 +29,21 @@ public class CountryService implements ICountry
 
     @Override
     public Optional read(String id) {
-        return this.countryRepository.read(id);
+        return this.countryRepository.findById(id);
     }
 
     @Override
-    public Country reading(Country o) {
-        return this.countryRepository.reading(o);
+    public Country reading(Country country) {
+        return null;
     }
 
     @Override
     public void delete(Country country) {
         this.countryRepository.delete(country);
+    }
+
+    @Override
+    public List<Country> findAll() {
+        return this.countryRepository.findAll();
     }
 }
