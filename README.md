@@ -26,3 +26,11 @@ having to create a Country first.
 This will allow them to be independently deployable
 as microservices, as they can now be created without having to 
 depend on the existence of other entities.
+
+All entities should be implemented in the controller package in this system,
+not all are implemented.
+
+One of the flaws that was noticeable in the UML design is that the variables 
+were all public and not private.
+
+In employee and student there is no Gender attribute that could be implemented.
