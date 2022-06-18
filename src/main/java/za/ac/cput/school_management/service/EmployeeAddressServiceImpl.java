@@ -10,22 +10,16 @@ import za.ac.cput.school_management.domain.EmployeeAddress;
 
 import za.ac.cput.school_management.repository.EmployeeAddressRepository;
 
-
 import java.util.List;
 import java.util.Optional;
 
 public class EmployeeAddressServiceImpl implements EmployeeAddressService {
     private final EmployeeAddressRepository repository;
-    private static EmployeeAddressService EMPLOYEE_ADDRESS_SERVICE;
 
-    private EmployeeAddressServiceImpl () { this.repository = EmployeeAddressRepository.getRepository();}
-
-    public static EmployeeAddressService getService() {
-        if (EMPLOYEE_ADDRESS_SERVICE == null)
-            EMPLOYEE_ADDRESS_SERVICE = (EmployeeAddressService) new EmployeeAddressServiceImpl();
-        return EMPLOYEE_ADDRESS_SERVICE;
-
+    public EmployeeAddressServiceImpl (EmployeeAddressRepository repository) {
+        this.repository = repository;
     }
+
     @Override
     public EmployeeAddress save(EmployeeAddress employeeAddress) {
         return this.repository.save(employeeAddress);
@@ -48,8 +42,9 @@ public class EmployeeAddressServiceImpl implements EmployeeAddressService {
 
     }
 
+
     @Override
-    public List<EmployeeAddressService> findAllStaffId(String staffId) {
+    public List<EmployeeAddress> findAllStaffId(String staffId) {
         return null;
     }
 

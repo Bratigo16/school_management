@@ -8,24 +8,26 @@ package za.ac.cput.school_management.service;
 
 import za.ac.cput.school_management.domain.Address;
 import za.ac.cput.school_management.repository.AddressRepository;
-
+import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class AddressServiceImpl implements AddressService {
     private final AddressRepository repository;
     private static AddressService SERVICE;
 
-    private AddressServiceImpl () {
+    public AddressServiceImpl() {
         this.repository = AddressRepository.getRepository();
     }
 
-    public static AddressService getService() {
+    public static AddressServiceImpl getService() {
         if (SERVICE == null)
-            SERVICE = (AddressService) new AddressServiceImpl();
-        return SERVICE;
+            SERVICE = new AddressServiceImpl();
+        return (AddressServiceImpl) SERVICE;
 
     }
+
     @Override
     public Address save(Address address) {
         return this.repository.save(address);
@@ -45,12 +47,10 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public void delete(Address address) {
         this.repository.delete(address);
-
     }
 
     @Override
-    public List<AddressService> findAllUnitNumber(String UnitNumber) {
-
-        return null;
+    public List<Address> findAll() {
+        return this.repository.findAll();
     }
 }

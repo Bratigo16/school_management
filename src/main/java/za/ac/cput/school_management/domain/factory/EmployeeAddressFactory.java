@@ -4,7 +4,7 @@
  *Assignment School management
  *Repository :Employee Address repository
  */
-package za.ac.cput.school_management.factory;
+package za.ac.cput.school_management.domain.factory;
 
 import org.apache.tomcat.jni.Address;
 import za.ac.cput.school_management.domain.EmployeeAddress;

@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.util.Objects;
 
 @Builder
@@ -19,6 +21,8 @@ public class Address {
     private String streetNumber;
     private String streetName;
     private int postalCode;
+    @ManyToOne
+    @JoinColumn(name = "city_id")
     private City city;
 
     private Address(Builder builder){
@@ -84,7 +88,7 @@ public class Address {
         public String complexName;
         public String streetNumber;
         public String streetName;
-        public Integer postalCode;
+        public int postalCode;
         public City city;
 
         public Address.Builder UnitNumber(String unitNumber) {

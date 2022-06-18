@@ -15,5 +15,5 @@ import java.util.List;
 
 public interface AddressService extends IService<Address,String>{
 
-        List<za.ac.cput.school_management.service.AddressService> findAllUnitNumber (String UnitNumber);
+        List<Address> findAll();
 }
