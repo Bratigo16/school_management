@@ -1,7 +1,18 @@
 package za.ac.cput.school_management.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Embeddable;
 import java.util.Objects;
 
+@Builder
+@Embeddable
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
 public class Address {
     private String unitNumber;
     private String complexName;
