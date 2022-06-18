@@ -19,12 +19,14 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-@SpringBootTest
 
+@SpringBootTest
 public class StudentAddressServiceImplTest {
 
+
+    private Address address;
     private final StudentAddress studentAddress = StudentAddressFactory
-            .build("test-stu-number",new Address());
+            .build("test-stu-number",address);
 
  @Autowired
  private StudentAddressService service;

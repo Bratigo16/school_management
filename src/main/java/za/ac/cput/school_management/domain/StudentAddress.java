@@ -20,7 +20,7 @@ import java.util.Objects;
 public class StudentAddress implements Serializable {
        @NotNull@Id private String studentId;
 
-       @Embeddable private Address address;
+private Address address;
       private StudentAddress(){}
 
     private StudentAddress(Builder builder) {
