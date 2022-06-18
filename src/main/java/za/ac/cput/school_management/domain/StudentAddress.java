@@ -8,12 +8,20 @@
 package za.ac.cput.school_management.domain;
 
 import org.apache.tomcat.jni.Address;
+import org.jetbrains.annotations.NotNull;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Objects;
+@Entity
 
-public class StudentAddress {
-       private final String studentId;
+public class StudentAddress implements Serializable {
+       @NotNull@Id private String studentId;
+
        private Address address;
+      private StudentAddress(){}
 
     private StudentAddress(Builder builder) {
         this.studentId = builder.studentId;

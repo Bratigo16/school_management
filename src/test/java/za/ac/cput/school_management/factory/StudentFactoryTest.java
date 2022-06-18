@@ -3,7 +3,7 @@ package za.ac.cput.school_management.factory;
  *  Author: Brady Sheldon 219053715
  *  Student
  *  June Assignment
- *  Date: 09 June 2022
+ *
  * */
 
 import org.junit.jupiter.api.Test;

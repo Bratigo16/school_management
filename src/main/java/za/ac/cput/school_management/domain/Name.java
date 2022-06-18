@@ -1,4 +1,11 @@
 package za.ac.cput.school_management.domain;
+
+import lombok.Builder;
+import org.jetbrains.annotations.NotNull;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /*
  *Author :Alizwa Solibanzi
  * Student no: 220001499
@@ -6,12 +13,15 @@ package za.ac.cput.school_management.domain;
  * ASSIGNMNET 2
  *
  */
-public class Name {
-    private String firstName;
-    private String middleName;
-    private String lastName;
+@Entity
 
-     public Name(Builder builder){
+@Table(name ="Name")
+      public class Name {
+ @NotNull private String firstName;
+  @NotNull  private String middleName;
+  @NotNull  private String lastName;
+
+    public Name(Builder builder){
          this.firstName = builder.firstName;;
          this.middleName = builder.middleName;;
          this.lastName = builder.lastName;

@@ -1,12 +1,14 @@
 package za.ac.cput.school_management.domain;
 
-import java.util.Objects;
 /*
  *  Author: Brady Sheldon 219053715
  *  Student
  *  June Assignment
- *  Date: 09 June 2022
+ *
  * */
+
+import java.util.Objects;
+
 public class Student {
     private final String StudentID, StudentEmail, FirstName, MiddleName, LastName;
 
@@ -30,10 +32,10 @@ public class Student {
         return FirstName;
     }
 
-    public String MiddleName() {
+    public String getMiddleName() {
         return MiddleName;
     }
-    public String LastName() {
+    public String getLastName() {
         return LastName;
     }
 
