@@ -5,11 +5,13 @@ import za.ac.cput.school_management.domain.Name;
 
 import java.util.List;
 import java.util.Optional;
-@Service
+
 public interface NameService extends IService<Name,String> {
     List<Name> findAll ();
 
     Optional<Name> read(String s);
+
+    Name save(Name name);
 
     Name reading(Name name);
 

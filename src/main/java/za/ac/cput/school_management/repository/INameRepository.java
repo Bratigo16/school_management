@@ -6,8 +6,8 @@ import za.ac.cput.school_management.domain.Name;
 
 import java.util.List;
 import java.util.Optional;
-@Repository
-public interface INameRepository extends JpaRepository<Name,String> {
+
+public interface INameRepository extends IRepository<Name,String> {
      List<Name>findAll ();
      Name reading (Name name );
     void delete(Name name);

@@ -4,6 +4,7 @@ import lombok.Builder;
 import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 /*
@@ -13,17 +14,16 @@ import java.util.Objects;
  * ASSIGNMNET 2
  *
  */
-@Entity
-@Table(name ="City" )
-public class City {
-   @NotNull @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) private String id;
+
+public class City implements Serializable {
+   @NotNull  private String id;
 
   @NotNull   private  String name;
 
   @ManyToOne
   @JoinColumn(name = "country_id")
   @NotNull  private Country  country;
-
+    protected City(){}
    public City (Builder builder){
        this.id = builder.id;
        this.name = builder.name;

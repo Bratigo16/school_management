@@ -1,9 +1,10 @@
 package za.ac.cput.school_management.service;
 
-import org.apache.tomcat.jni.Address;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.school_management.domain.City;
@@ -17,14 +18,15 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = {CityServiceImpl.class})
+@SpringBootTest(classes = CityService.class)
 class CityServiceImplTest {
-  private final  Country count = CountryFactory.build("7777","South Africa");
-    private final City city = CityFactory.build("4455","East London",count);
 
+   private final  Country count = CountryFactory.build("7777","South Africa");
+    private final City city = CityFactory.build("4455","East London", count);
+    @Autowired  CityService service;
 
-    @Autowired  private CityServiceImpl service;
     @Test
+    @BeforeEach
     void save() {
         City saved = this.service.save(this.city);
         assertAll(
@@ -45,6 +47,7 @@ class CityServiceImplTest {
     }
 
     @Test
+    @AfterEach
     void delete() {
         this.service.delete(this.city);
         List<City> cityList = this.service.findAll();

@@ -67,16 +67,17 @@ class StudentControllerTest {
 
     @Order(2)
     @Test
-    void read() { //{String url = baseUrl + "read/" + this.student.getStudentID();
-        //       System.out.println(url);
-        //      ResponseEntity<Student> response = this.restTemplate.getForEntity(url, Student.class);
-        //     System.out.println(response);
-        //      assertAll(
-        //              () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
-        //              () -> assertNotNull(response.getBody())
+    void read() {
+        String url = baseUrl + "read/" + this.Student.getStudentID();
+               System.out.println(url);
+              ResponseEntity<Student> response = this.restTemplate.getForEntity(url, Student.class);
+             System.out.println(response);
+              assertAll(
+                      () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
+                      () -> assertNotNull(response.getBody())
 
 
-        //     );}
+             );
     }
 
     @Order(3)

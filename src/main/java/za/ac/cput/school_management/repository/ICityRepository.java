@@ -8,7 +8,7 @@ import za.ac.cput.school_management.domain.City;
 
 import java.util.List;
 @Repository
-public interface ICityRepository  extends JpaRepository<City,String> {
+public interface ICityRepository  extends IRepository<City,String> {
      List<City> findAll ();
       void delete (City city);
      City reading(City city);

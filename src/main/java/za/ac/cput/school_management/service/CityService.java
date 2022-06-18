@@ -8,11 +8,12 @@ import za.ac.cput.school_management.domain.City;
 
 import java.util.List;
 import java.util.Optional;
-@Service
-public interface CityService extends JpaRepository<City,String> {
+
+public interface CityService extends IService<City,String> {
      List<City> findAll ();
      Optional<City> read(String id);
-     public City reading(City city);
+    City save(City city);
+      City reading(City city);
        void delete(City city);
 
      City findByCountry_IdOrderByName(String countryId);
