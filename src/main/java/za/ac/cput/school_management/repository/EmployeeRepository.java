@@ -12,9 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
 public class EmployeeRepository {
     private final List<Employee> employeeList;
-    private static  EmployeeRepository EMPLOYEE_REPOSITORY;
+
+private static  EmployeeRepository EMPLOYEE_REPOSITORY;
 
     private EmployeeRepository() {
         this.employeeList = new ArrayList<>();
@@ -33,7 +35,6 @@ public class EmployeeRepository {
         this.employeeList.add(Employee);
         return Employee;
     }
-
     public  Optional<Employee> read (String staffId){
         return this.employeeList.stream().filter(g -> g.getStaffId().equalsIgnoreCase(staffId)).findFirst();
     }
@@ -44,4 +45,6 @@ public class EmployeeRepository {
     public List<Employee> findAll() {
         return this.employeeList;
     }
+
+    public Employee findByCity_IdOrderByName(String cityId){return (Employee) this.employeeList;}
 }
