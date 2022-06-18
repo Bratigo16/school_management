@@ -6,12 +6,14 @@
  */
 package za.ac.cput.school_management.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import za.ac.cput.school_management.domain.Address;
-import za.ac.cput.school_management.domain.StudentAddress;
+
+
 
 import java.util.List;
 
-    public interface IAddress extends IRepository<Address,String>{
-        public List<StudentAddress> findByUnitNumber(String unitNumber);
+    public interface IAddress extends JpaRepository<Address,String>{
+        List<Address> findAll();
     }
 

@@ -12,5 +12,7 @@ import za.ac.cput.school_management.domain.EmployeeAddress;
 import java.util.List;
 
 public interface EmployeeAddressService extends IService<EmployeeAddress,String>{
-    List<EmployeeAddressService> findAllStaffId (String staffId);
+    List<EmployeeAddress> findAllStaffId (String staffId);
+
+
 }
