@@ -1,7 +1,7 @@
-/*  ICountry.java
-    Interface for the CountryRepository
+/*  CountryRepository.java
+    Interface to store Country entities
     Author: Wilbur Deano Smith (220003033)
-    Date: 14 June 2022
+    Date: 18 June 2022
 */
 package za.ac.cput.school_management.repository;
 
