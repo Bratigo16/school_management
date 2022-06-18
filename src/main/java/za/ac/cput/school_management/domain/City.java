@@ -1,7 +1,9 @@
 package za.ac.cput.school_management.domain;
 
+import lombok.Builder;
 import org.jetbrains.annotations.NotNull;
 
+import javax.persistence.*;
 import java.util.Objects;
 
 /*
@@ -11,10 +13,16 @@ import java.util.Objects;
  * ASSIGNMNET 2
  *
  */
+@Entity
+@Table(name ="City" )
 public class City {
-    private String id;
-    private  String name;
-    private Country  country;
+   @NotNull @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) private String id;
+
+  @NotNull   private  String name;
+
+  @ManyToOne
+  @JoinColumn(name = "country_id")
+  @NotNull  private Country  country;
 
    public City (Builder builder){
        this.id = builder.id;
