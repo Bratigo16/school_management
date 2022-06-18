@@ -1,5 +1,6 @@
 package za.ac.cput.school_management.domain;
 
+
 import java.util.Objects;
 
 public class Address {
