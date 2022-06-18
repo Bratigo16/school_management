@@ -5,11 +5,9 @@
 */
 package za.ac.cput.school_management.service;
 
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cput.school_management.domain.Country;
-import za.ac.cput.school_management.domain.StudentAddress;
 import za.ac.cput.school_management.factory.CountryFactory;
 
 import java.util.List;
@@ -17,6 +15,7 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CountryServiceTest {
 
     private final Country country = CountryFactory
@@ -26,6 +25,7 @@ class CountryServiceTest {
     @Autowired
     private CountryService service;
 
+    @Order(1)
     @Test
     void save()
     {
@@ -36,6 +36,7 @@ class CountryServiceTest {
         );
     }
 
+    @Order(2)
     @Test
     void read() {
         Optional<Country> read = this.service.read(this.country.getId());
@@ -45,11 +46,13 @@ class CountryServiceTest {
         );
     }
 
+    @Order(4)
     @Test
     void delete() {
         this.service.delete(this.country);
     }
 
+    @Order(3)
     @Test
     void findAll() {
         List<Country> countryList = this.service.findAll();

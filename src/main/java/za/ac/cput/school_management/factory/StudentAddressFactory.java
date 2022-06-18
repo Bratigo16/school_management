@@ -12,10 +12,7 @@ import za.ac.cput.school_management.helper.StringHelper;
 public class StudentAddressFactory {
     public static StudentAddress build(String studentId, Address address){
         StringHelper.checkStringParam("studentId",studentId);
-
-
-
-
+        StringHelper.checkStringParam("address", String.valueOf(address));
         return new StudentAddress.Builder().studentId(studentId)
                 .address(address).build();
     }

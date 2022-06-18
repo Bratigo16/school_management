@@ -4,7 +4,9 @@ import lombok.Builder;
 import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /*
  *Author :Alizwa Solibanzi
@@ -16,11 +18,13 @@ import javax.persistence.Table;
 @Entity
 
 @Table(name ="Name")
-      public class Name {
- @NotNull private String firstName;
+      public class Name implements Serializable {
+ @NotNull
+ private String firstName;
   @NotNull  private String middleName;
   @NotNull  private String lastName;
 
+    protected Name(){}
     public Name(Builder builder){
          this.firstName = builder.firstName;;
          this.middleName = builder.middleName;;

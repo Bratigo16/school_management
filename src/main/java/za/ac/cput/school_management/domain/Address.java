@@ -6,6 +6,7 @@
  */
 package za.ac.cput.school_management.domain;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import javax.persistence.*;
 import java.io.Serializable;
+
 import java.util.Objects;
 
 @Entity

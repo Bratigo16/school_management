@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import za.ac.cput.school_management.SchoolManagementApplication;
 import za.ac.cput.school_management.domain.StudentAddress;
 import za.ac.cput.school_management.factory.StudentAddressFactory;
 
@@ -19,12 +20,14 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-@SpringBootTest
 
+@SpringBootTest(classes = SchoolManagementApplication.class)
 public class StudentAddressServiceImplTest {
 
+
+    private Address address;
     private final StudentAddress studentAddress = StudentAddressFactory
-            .build("test-stu-number",new Address());
+            .build("test-stu-number",address);
 
  @Autowired
  private StudentAddressService service;

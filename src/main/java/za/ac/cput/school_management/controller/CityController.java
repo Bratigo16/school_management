@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import za.ac.cput.school_management.domain.City;
+import za.ac.cput.school_management.service.CityService;
 import za.ac.cput.school_management.service.CityServiceImpl;
 
 import java.util.List;
@@ -14,9 +15,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("school/city/")
 public class CityController {
-    private CityServiceImpl cityService;
+    private CityService cityService;
 
-@Autowired public CityController(CityServiceImpl cityService){
+@Autowired public CityController(CityService cityService){
     this.cityService =cityService;
 }
 @PostMapping("save")
