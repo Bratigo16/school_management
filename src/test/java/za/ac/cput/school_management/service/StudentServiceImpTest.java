@@ -40,7 +40,6 @@ class StudentServiceImpTest {
 
         this.SERVICE = StudentServiceImp.getService();
 
-
     }
 
     @AfterEach

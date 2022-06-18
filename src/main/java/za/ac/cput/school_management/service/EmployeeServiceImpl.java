@@ -6,23 +6,28 @@
 
 package za.ac.cput.school_management.service;
 
+
 import za.ac.cput.school_management.domain.Employee;
 import za.ac.cput.school_management.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeService {
-    private static EmployeeService employeeService;
-    private EmployeeRepository employeeRepository;
-    private EmployeeServiceImpl() {
+public abstract class EmployeeServiceImpl implements EmployeeService {
+    private final EmployeeRepository employeeRepository;
+
+   private static EmployeeService employeeService;
+
+    public EmployeeServiceImpl() {
         this.employeeRepository = EmployeeRepository.GetEmployeeRepository();
     }
 
-    public static EmployeeService getEmployeeService(){
-        if (employeeService == null) employeeService = (EmployeeService) new EmployeeServiceImpl();
-        return  employeeService;
+    public static EmployeeServiceImpl getEmployeeService() {
+        if(employeeService == null)
+            employeeService = employeeService;
+        return (EmployeeServiceImpl)  employeeService;
     }
 
     @Override
@@ -46,7 +51,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public List<EmployeeService> findAllStaffId (String staffId) {
-        return null;
+    public List<Employee> findAll() {
+        return this.employeeRepository.findAll();
+    }
+
+    @Override
+    public Employee findByCountry_IdOrderByName(String cityId) {
+        return this.employeeRepository.findByCity_IdOrderByName(cityId);
     }
 }
