@@ -1,4 +1,7 @@
 package za.ac.cput.school_management.repository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import za.ac.cput.school_management.domain.City;
 
 
@@ -6,18 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class CityRepository implements ICityRepository{
-    private List<City> CityList;
-    private static CityRepository City_REPOSITORY;
 
-    private CityRepository(){
+@Repository
+public abstract class CityRepository implements ICityRepository{
+    private final List<City> CityList;
+  @Autowired private CityRepository(){
         this.CityList = new ArrayList<>();
     }
-    public static CityRepository GetCityRepository (){
-        if(City_REPOSITORY == null)
-            City_REPOSITORY= new CityRepository();
-        return City_REPOSITORY;
-    }
+
 
     public City save (City city){
         Optional<City> read = read(city.getId());
@@ -45,6 +44,11 @@ public class CityRepository implements ICityRepository{
     }
     public List<City> findAll(){
         return  this.CityList;
+    }
+
+    @Override
+    public City findByCountry_IdOrderByName(String countryId) {
+        return (City) this.CityList;
     }
 }
 
