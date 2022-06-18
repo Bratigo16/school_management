@@ -1,3 +1,9 @@
+/*
+ *Author:Yaaseen Safodien 218336950
+ *Applications Development ADP3
+ *Assignment School management
+ *Service :Address Service Impl Test
+ */
 package za.ac.cput.school_management.service;
 
 import org.junit.jupiter.api.*;
@@ -7,7 +13,7 @@ import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.school_management.domain.Address;
 import za.ac.cput.school_management.domain.City;
-import za.ac.cput.school_management.domain.factory.AddressFactory;
+import za.ac.cput.school_management.factory.AddressFactory;
 
 import java.util.List;
 import java.util.Optional;

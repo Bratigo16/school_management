@@ -1,3 +1,9 @@
+/*
+ *Author:Yaaseen Safodien 218336950
+ *Applications Development ADP3
+ *Assignment School management
+ *Service :Employee Address Service Impl Test
+ */
 package za.ac.cput.school_management.service;
 
 import org.apache.tomcat.jni.Address;
@@ -5,8 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.school_management.domain.EmployeeAddress;
-import za.ac.cput.school_management.domain.StudentAddress;
-import za.ac.cput.school_management.domain.factory.EmployeeAddressFactory;
+import za.ac.cput.school_management.factory.EmployeeAddressFactory;
 
 import java.util.List;
 import java.util.Optional;

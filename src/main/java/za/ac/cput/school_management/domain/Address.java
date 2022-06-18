@@ -1,22 +1,28 @@
+/*
+ *Author:Yaaseen Safodien 218336950
+ *Applications Development ADP3
+ *Assignment School management
+ *Domain :Address
+ */
 package za.ac.cput.school_management.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.Embeddable;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import org.jetbrains.annotations.NotNull;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
 @Builder
 @Embeddable
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class Address {
-    private String unitNumber;
+public class Address implements Serializable {
+   @NotNull @Id private String unitNumber;
     private String complexName;
     private String streetNumber;
     private String streetName;
@@ -46,9 +52,6 @@ public class Address {
         return complexName;
     }
 
-    public void setComplexName(String complexName) {
-        this.complexName = complexName;
-    }
 
     public String getStreetNumber() {
         return streetNumber;
@@ -70,7 +73,7 @@ public class Address {
         return postalCode;
     }
 
-    public void setPostalCode(Integer postalCode) {
+    public void setPostalCode(int postalCode) {
         this.postalCode = postalCode;
     }
 

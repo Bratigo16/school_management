@@ -1,4 +1,4 @@
-package za.ac.cput.school_management.domain.factory;
+package za.ac.cput.school_management.factory;
 
 import za.ac.cput.school_management.domain.Address;
 import za.ac.cput.school_management.domain.City;

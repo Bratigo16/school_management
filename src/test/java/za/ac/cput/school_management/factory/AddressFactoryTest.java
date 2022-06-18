@@ -9,7 +9,6 @@ package za.ac.cput.school_management.factory;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.school_management.domain.Address;
 import za.ac.cput.school_management.domain.City;
-import za.ac.cput.school_management.domain.factory.AddressFactory;
 
 
 import static org.junit.jupiter.api.Assertions.*;

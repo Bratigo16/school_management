@@ -14,7 +14,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.school_management.domain.EmployeeAddress;
-import za.ac.cput.school_management.domain.factory.EmployeeAddressFactory;
+import za.ac.cput.school_management.factory.EmployeeAddressFactory;
 
 
 import java.util.List;
