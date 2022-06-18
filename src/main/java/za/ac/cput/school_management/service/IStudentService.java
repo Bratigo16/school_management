@@ -7,6 +7,7 @@ package za.ac.cput.school_management.service;
  *
  * */
 
+import za.ac.cput.school_management.domain.City;
 import za.ac.cput.school_management.domain.Student;
 
 
@@ -17,6 +18,8 @@ public interface IStudentService extends IService<Student, String> {
 
      List<Student> findAll();
 
+
+     Student findByStudent_IDOrderByLastName(String countryId);
 
 
 }
