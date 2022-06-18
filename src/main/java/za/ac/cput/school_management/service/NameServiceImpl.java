@@ -1,18 +1,16 @@
 package za.ac.cput.school_management.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import za.ac.cput.school_management.domain.Name;
-import za.ac.cput.school_management.repository.NameRepository;
+import za.ac.cput.school_management.repository.INameRepository;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 @Service
 public class NameServiceImpl implements NameService{
-   @Autowired private final NameRepository repository;
-    private NameServiceImpl(NameRepository repository){
+  @Autowired private final INameRepository repository;
+    private NameServiceImpl(INameRepository repository){
         this.repository =repository;
     }
 
